@@ -127,3 +127,5 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 
 ]
+
+TIME_INPUT_FORMATS = ('%I:%M %p',)
