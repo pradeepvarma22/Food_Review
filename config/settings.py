@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'FoodApp.apps.FoodappConfig'
+    'FoodApp.apps.FoodappConfig',
+    'crispy_forms'
 ]
 
 MIDDLEWARE = [
@@ -127,5 +128,8 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 
 ]
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
 
 TIME_INPUT_FORMATS = ('%I:%M %p',)

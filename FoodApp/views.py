@@ -55,7 +55,6 @@ def LogIn(request):
             password = form.cleaned_data['password']
             user = authenticate(username=username,password=password)
             if user is not None:
-                print('I am herer')
                 login(request,user)
                 return redirect('home')
 

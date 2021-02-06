@@ -1,12 +1,14 @@
 {% extends 'base.html' %}
 
+{% load crispy_forms_tags %}
+
 {% block body_block %}
 
     <div class="container">
 
         <form class="signup form-horizontal"  method="POST" action="{% url 'review' objid %}">
                 {% csrf_token %}
-                {{form.as_p}}
+                {{form  | crispy }}
                 <input type="submit" class="btn btn-secondary">
         </form>
     </div>

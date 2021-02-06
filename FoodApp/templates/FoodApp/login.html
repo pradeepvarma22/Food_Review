@@ -1,22 +1,17 @@
 {% extends 'base.html' %}
 
 
+{% load crispy_forms_tags %}
+
 
 {% block body_block %}
 
 
-<div class="d-flex justify-content-center align-items-center" style="height:100px;">
+<div class="conatiner" style="height:100px;">
     <form  method = "POST" action="{% url 'login' %}"> 
             {% csrf_token %}
-            <p>
-                {{form.username.label}}
-                {{form.username}}
-            </p>
-            <p>
-                {{form.password.label}}
-                {{form.password}}
-            </p>
-            <input type="submit" value="Login">
+            {{form | crispy }}
+            <input  type="submit" value="Login" class="btn btn-success">
     </form>
 </div>
 {% endblock %}
