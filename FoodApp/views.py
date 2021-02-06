@@ -75,3 +75,11 @@ def register(request):
         "form" : form
     }
     return render(request,'FoodApp/register.html',context)
+
+
+def AllReviews(request):
+    objs = ReviewModel.objects.all()
+    context={
+        'objs' : objs
+    }
+    return render(request,'FoodApp/allreviews.html',context)

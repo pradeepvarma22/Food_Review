@@ -3,7 +3,7 @@
   <h3 style = "font-family: Verdana, Arial, Tahoma, Serif;"><it>BVRIT</it></h3>
 
   <ul class="navbar-nav ml-auto">
-    
+       
       <li class="nav-item"> 
           <a class="nav-link" href="{% url 'home' %}"> 
             {% if user.is_authenticated %}
@@ -35,6 +35,14 @@
       </a> 
   </li> 
     {% endif %}
+
+    <li class="nav-item"> 
+      <a class="nav-link" href="{% url 'allreviews' %}"> 
+        {% if user.is_authenticated %}
+          Reviews
+        {% endif %}
+      </a> 
+  </li>
 
   </ul> 
 </nav> 

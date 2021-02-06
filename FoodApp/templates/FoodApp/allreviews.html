@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+
+
+{% block body_block %}
+
+    {% for i in objs %}
+   
+
+
+    <p>
+        <div class="card">
+            <div class="card-header">
+              <b>{{i}}: </b>
+            </div>
+            <div class="card-body">
+              <blockquote class="blockquote mb-0">
+                <img style="width: 8rem; height: 8rem;"   class="rounded"  src="/{{i.foodmodel.item_image}}">
+                <p>{{i.createdon}}</p>
+                <p>{{i.foodmodel.item_name}}</p>
+                <p>{{i.text}}</p> 
+                <b><footer class="blockquote-footer">{{i.rate}} </footer></b>
+              </blockquote>
+            </div>
+          </div>
+    </p>
+    <br>
+    {% endfor %}
+
+
+{% endblock %}
