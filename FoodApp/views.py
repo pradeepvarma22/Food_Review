@@ -76,7 +76,7 @@ def register(request):
     }
     return render(request,'FoodApp/register.html',context)
 
-
+@login_required(login_url="login")
 def AllReviews(request):
     objs = ReviewModel.objects.all()
     context={
