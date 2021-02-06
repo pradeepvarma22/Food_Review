@@ -4,7 +4,8 @@ from django.conf.urls.static import static
 from FoodApp.views import Home,createReview,LogOut,LogIn,register,AllReviews
 
 from django.views.static import serve
-from django.conf.urls.static import url,static
+from django.conf.urls.static import static
+from django.conf.urls import url
 
 
 urlpatterns=[
