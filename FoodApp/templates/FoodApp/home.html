@@ -2,8 +2,6 @@
 
 
 {% block body_block %}
-      
-
     <div class="row">
 
         {% for i in itemlist %}
@@ -14,7 +12,7 @@
                         <p class="card-text">{{i.item_desc}}</p>
                         <p class="card-text">{{i.createdon}}</p>
                         <p class="card-text">{{i.diet}}</p>
-                        <a href="#" class="btn btn-primary">Review</a>
+                        <a href="{% url 'review' i.id %}" class="btn btn-primary">Review</a>
                         </div>
                 </div>
         {% endfor %}

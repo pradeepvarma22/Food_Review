@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block body_block %}
+
+    <div class="container">
+
+        <form class="signup form-horizontal"  method="POST" action="{% url 'review' objid %}">
+                {% csrf_token %}
+                {{form.as_p}}
+                <input type="submit" class="btn btn-secondary">
+        </form>
+    </div>
+        
+{% endblock %}
