@@ -18,4 +18,3 @@ class CreateReviewForm(forms.ModelForm):
 					}
 				),
 			}
-

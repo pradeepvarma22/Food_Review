@@ -2,6 +2,7 @@ from django.shortcuts import render,redirect
 from FoodApp.models import FoodModel,ReviewModel
 from FoodApp.forms import CreateReviewForm
 from django.contrib.auth import login,logout,authenticate
+from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.forms import AuthenticationForm
 import datetime
 from django.contrib.auth.models import User
@@ -13,6 +14,7 @@ def Home(request):
         "itemlist" : itemlist
     }
     return render(request,'FoodApp/home.html',context)
+
 
 def createReview(request,pk):
     usernameg = None
@@ -56,12 +58,20 @@ def LogIn(request):
                 print('I am herer')
                 login(request,user)
                 return redirect('home')
-            else:
-                print('Wrong Password')
-
-
 
     context= {
         'form':form
     }
     return render(request,'FoodApp/login.html',context)
+
+def register(request):
+    form = UserCreationForm
+    if request.method=='POST':
+        form = UserCreationForm(request.POST)
+        if form.is_valid(): 
+            form.save()
+            return redirect('login')
+    context = {
+        "form" : form
+    }
+    return render(request,'FoodApp/register.html',context)
