@@ -6,6 +6,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.forms import AuthenticationForm
 import datetime
 from django.contrib.auth.models import User
+from django.contrib.auth.decorators import login_required
 
 def Home(request):
     today = datetime.date.today()
@@ -15,7 +16,7 @@ def Home(request):
     }
     return render(request,'FoodApp/home.html',context)
 
-
+@login_required(login_url="login")
 def createReview(request,pk):
     usernameg = None
     if request.user.is_authenticated:
